@@ -36,7 +36,7 @@
 #include "vtkTextProperty.h"
 
 #include <iostream>
-#include "/Users/khairyk/VPCZ1_kk_share/c_code/shape_tools/include/shape_tools.h"
+#include "shape_tools.h"
 
 
 /////

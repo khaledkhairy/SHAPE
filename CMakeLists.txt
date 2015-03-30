@@ -24,12 +24,13 @@ endif()
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}
+  /Users/khairyk/VPCZ1_kk_share/c_code/shape_tools
 )
 
 # Set your files and resources here
 set( Srcs main.cpp shape.cpp )
 
-set( Hdrs shape.h )
+set( Hdrs shape.h)
 
 set( MOC_Hdrs shape.h )
 
@@ -42,7 +43,6 @@ set( QRCs shape.qrc )
 set(CMAKE_AUTOMOC ON)
 
 # The rest should just work (sure...)
-if(VTK_QT_VERSION VERSION_GREATER "4")
   # We have ui files, this will bring in the macro: qt5_wrap_ui
   find_package(Qt5Widgets REQUIRED QUIET)
   qt5_wrap_ui(UI_Srcs ${UIs})
@@ -65,35 +65,4 @@ if(VTK_QT_VERSION VERSION_GREATER "4")
     ${Srcs} ${Hdrs} ${UI_Srcs} ${MOC_Hdrs} ${QRC_Srcs})
   qt5_use_modules(shape Core Gui Widgets)
   target_link_libraries(shape ${VTK_LIBRARIES})
-else()
-  find_package(Qt4 REQUIRED)
-  include(${QT_USE_FILE})
-  # Use what VTK built with
-  set(QT_QMAKE_EXECUTABLE ${VTK_QT_QMAKE_EXECUTABLE} CACHE FILEPATH "")
-  set(QT_MOC_EXECUTABLE ${VTK_QT_MOC_EXECUTABLE} CACHE FILEPATH "")
-  set(QT_UIC_EXECUTABLE ${VTK_QT_UIC_EXECUTABLE} CACHE FILEPATH "")
-  qt4_wrap_ui(UI_Srcs ${UIs})
-  qt4_wrap_cpp(MOC_Srcs ${MOC_Hdrs} )
-  qt4_add_resources(QRC_Srcs ${QRCs})
 
-  source_group("Resources" FILES
-    ${UIs}
-    ${QRCs}
-    ${EXE_ICON} # Not present
-  )
-
-  source_group("Generated" FILES
-    ${UI_Srcs}
-    ${QRC_Srcs}
-    ${QRC_Srcs}
-  )
-
-  add_definitions(-DQT_GUI_LIBS -DQT_CORE_LIB -DQT3_SUPPORT)
-
-  add_executable(shape MACOSX_BUNDLE
-    ${Srcs} ${Hdrs} ${UI_Srcs} ${MOC_Hdrs} ${QRC_Srcs})
-  target_link_libraries(shape
-    ${QT_LIBRARIES}
-    ${VTK_LIBRARIES}
-  )
-endif()
