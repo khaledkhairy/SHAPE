@@ -193,7 +193,7 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>440</x>
+         <x>430</x>
          <y>40</y>
          <width>54</width>
          <height>18</height>
@@ -203,7 +203,7 @@ p, li { white-space: pre-wrap; }
         <string>Bending energy normalized to that of sphere</string>
        </property>
        <property name="text">
-        <string>Eb</string>
+        <string>Bend. E.</string>
        </property>
       </widget>
       <widget class="QLCDNumber" name="lcdNumberWb">
@@ -433,9 +433,9 @@ p, li { white-space: pre-wrap; }
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>350</x>
+         <x>360</x>
          <y>40</y>
-         <width>71</width>
+         <width>51</width>
          <height>18</height>
         </rect>
        </property>
@@ -443,7 +443,7 @@ p, li { white-space: pre-wrap; }
         <string>Volume ratio: volume/(volume of sphere of same area)</string>
        </property>
        <property name="text">
-        <string>Reduced Vol.</string>
+        <string>Red Vol.</string>
        </property>
       </widget>
       <widget class="QLCDNumber" name="lcdNumberReducedVolume">
@@ -990,7 +990,7 @@ p, li { white-space: pre-wrap; }
         <string>Total mean curvature</string>
        </property>
        <property name="text">
-        <string>T. m. Curv.</string>
+        <string>Mean</string>
        </property>
       </widget>
       <widget class="QLabel" name="label">
@@ -1229,7 +1229,7 @@ p, li { white-space: pre-wrap; }
         <string>Total Gaussian curvature</string>
        </property>
        <property name="text">
-        <string>T.Gau. Curv.</string>
+        <string>Gaussian</string>
        </property>
       </widget>
       <widget class="QLCDNumber" name="lcdNumberEb_2">
@@ -6144,7 +6144,7 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>81</width>
+         <width>111</width>
          <height>28</height>
         </rect>
        </property>
@@ -6165,14 +6165,30 @@ p, li { white-space: pre-wrap; }
       <widget class="QPushButton" name="pushButton_cube_axis_toggle">
        <property name="geometry">
         <rect>
-         <x>100</x>
+         <x>140</x>
          <y>10</y>
-         <width>81</width>
+         <width>111</width>
          <height>28</height>
         </rect>
        </property>
        <property name="text">
         <string>ruler on/off</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_181">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>20</y>
+         <width>71</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Total Gaussian curvature</string>
+       </property>
+       <property name="text">
+        <string>Curvature</string>
        </property>
       </widget>
      </widget>
