@@ -1,7 +1,10 @@
-# SHAPE
-Explore and view shape properties and behavior of SPHARM coefficients interactively.
-These are coefficients of a parametric spherical harmonics representation of objects of genus zero.
+# SHAPE (Spherical HArmonics Parameterization Explorer)
+Generate spherical harmonics-based shapes, or explor existing ones, and their shape properties interactively and accurately.
+SHAPE allows monitoring behavior of (and modification of) spherrical harmonics parameterization (SPHARM) coefficients interactively.
+These are (Fourier) coefficients of a parametric spherical harmonics representation of objects of genus zero.
 Genus zero objects have no handles (the topology is that of the sphere).
+SHAPE is also used to view spherical harmonics fields mapped onto a base SPHARM shape.
+Exporting shapes has temporarily been disabled.
 
 For examples of works based on shape parameterization using Fourier series expansions, please refer to:
 
