@@ -287,7 +287,6 @@ void shape::on_actionExport_triggered()
 	std::string filestr = (const char*)filename.toLatin1();
 	if(!(filestr.length()==0))
 	{
-		int tmp = 0;
 		// prepare the scene by removing the axis actor if present
 		if(_axis_on)
 		{
@@ -360,7 +359,7 @@ void shape::shape2polydata(const shp_surface *s, vtkPolyData* polydata){
 	{
 		// add the scalar field 
 		vtkFloatArray *scalars = vtkFloatArray::New();
-		float tmp;
+		//float tmp;
 		_minH = 0.0;
 		_maxH = 0.0;
 		for (int i=0; i<s->sm->n_points; i++){
@@ -368,11 +367,11 @@ void shape::shape2polydata(const shp_surface *s, vtkPolyData* polydata){
 			if((this->_s->sm->sf[i])<_minH){_minH = this->_s->sm->sf[i];}
 		}
 		//std::cout<<"found range"<<_minH<<" "<<_maxH<<"  ... rescaling."<<std::endl;
-		double range = _maxH-_minH;
+		//double range = _maxH-_minH;
 		//double lo = 0.0;
 		//double hi = 250;
 		//double fac = 255.0/(range);
-		double fac = _maxH/range;
+		//double fac = _maxH/range;
 		double val = 999;
 		for (int i=0; i<s->sm->n_points; i++)
 		{
