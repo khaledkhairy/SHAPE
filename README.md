@@ -3,24 +3,24 @@ Explore and view shape properties and behavior of SPHARM coefficients interactiv
 These are coefficients of a parametric spherical harmonics representation of objects of genus zero.
 Genus zero objects have no handles (the topology is that of the sphere).
 
-For examples of works based on such a parameterization using a Fourier series expansion, please refer to:
+For examples of works based on shape parameterization using Fourier series expansions, please refer to:
 
--Minimum-energy vesicle and cell shapes calculated using spherical harmonics parameterization
+-Minimum-energy vesicle and cell shapes calculated using spherical harmonics parameterization. 
 Khaled Khairy and Jonathon Howard. Soft Matter, 2011,7, 2138-2143
 
--Drawing an elephant with 4 parameters
+-Drawing an elephant with 4 parameters. 
 Mayer J., K. Khairy and J. Howard, American Journal of Physics, 78(6):648-649 (2010).
 
--Shapes of Red Blood Cells: Comparison of 3D Confocal Images with the Bilayer-Couple Model
+-Shapes of Red Blood Cells: Comparison of 3D Confocal Images with the Bilayer-Couple Model. 
 Khaled Khairy, JiJinn Foo and Jonathon Howard. Cellular and Molecular Bioengineering, 1:173-181, 2008
 
--Detection of Deformable Objects in 3D Images using Markov Chain Monte Carlo and Spherical Harmonics
+-Detection of Deformable Objects in 3D Images using Markov Chain Monte Carlo and Spherical Harmonics. 
 Khairy K., E. Reynaud, E. Stelzer, MICCAI New York 2008
 
--Spherical harmonics-based parametric deconvolution of 3D surface images using bending energy minimization.
+-Spherical harmonics-based parametric deconvolution of 3D surface images using bending energy minimization. 
 Khairy Khairy and Jonathon Howard. Med Image Anal. 2008 Apr;12(2):217-27. Epub 2007 Oct 30.
 
--Spherical Harmonics 3D Active Contours for Membrane Bilayer-Bound Surfaces
+-Spherical Harmonics 3D Active Contours for Membrane Bilayer-Bound Surfaces. 
 Khaled Khairy, Jacques Pecreaux and Jonathon Howard. MICCAI 2007
 
 ----------------------------------------------------------------------------------
