@@ -25,7 +25,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QVTKWidget" name="vtkWidget1">
+     <widget class="QVTKWidget" name="vtkWidget1" native="true">
       <property name="minimumSize">
        <size>
         <width>500</width>
@@ -417,19 +417,6 @@ p, li { white-space: pre-wrap; }
         <number>5</number>
        </property>
       </widget>
-      <widget class="QLabel" name="label_8">
-       <property name="geometry">
-        <rect>
-         <x>760</x>
-         <y>60</y>
-         <width>71</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>base points</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
@@ -648,12 +635,12 @@ p, li { white-space: pre-wrap; }
         <rect>
          <x>640</x>
          <y>60</y>
-         <width>121</width>
+         <width>201</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>Gaussian quadrature</string>
+        <string>Gaussian quadrature base points</string>
        </property>
       </widget>
       <widget class="QComboBox" name="comboBox_gdim">
@@ -6213,6 +6200,7 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionExport"/>
     <addaction name="actionExport_to_STL"/>
     <addaction name="actionExport_to_PLY"/>
+    <addaction name="actionExport_to_VRML"/>
     <addaction name="actionExit"/>
    </widget>
    <addaction name="menuFile"/>
@@ -6253,6 +6241,14 @@ p, li { white-space: pre-wrap; }
   <action name="actionExport_to_PLY">
    <property name="text">
     <string>Export to PLY</string>
+   </property>
+  </action>
+  <action name="actionExport_to_VRML">
+   <property name="text">
+    <string>Export to VRML</string>
+   </property>
+   <property name="toolTip">
+    <string>Export scene to VRML format</string>
    </property>
   </action>
  </widget>

@@ -69,6 +69,7 @@ public:
 	virtual void on_actionExport_triggered();
 	virtual void on_actionExport_to_STL_triggered();
 	virtual void on_actionExport_to_PLY_triggered();
+    virtual void on_actionExport_to_VRML_triggered();
 	virtual	void on_actionExit_triggered();
 	virtual void on_comboBox_gdim_currentIndexChanged(int);
 	virtual void on_comboBox_spherical_mesh_currentIndexChanged(int);

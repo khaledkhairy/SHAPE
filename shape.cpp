@@ -33,6 +33,7 @@
 #include "vtkRenderWindowInteractor.h"
 #include "vtkPLYWriter.h"
 #include "vtkSTLWriter.h"
+#include "vtkVRMLExporter.h"
 #include "vtkTextProperty.h"
 
 #include <iostream>
@@ -47,6 +48,7 @@ shape::shape(QWidget *parent)
 {
 	Ui_MainWindow::setupUi(this);
 	//this->setFixedSize(this->size());
+    this->setAcceptDrops(true);
 	_minH = 0.0;
 	_maxH = 0.0;
 	// QT/VTK
@@ -216,14 +218,29 @@ void shape::on_actionOpen_triggered()// Action to be taken upon file open
 //functions to handle the file-drop event
 QString shape::mimeData_2_fileName( const QMimeData * mimeData )
 {
-	if ( mimeData->hasUrls() )
+
+    if ( mimeData->hasUrls() )
 	{
+        /*
+         QStringList pathList;
+        QList<QUrl> urlList = mimeData->urls();
+        // extract the local paths of the files
+        for (int i = 0; i < urlList.size() && i < 32; ++i)
+        {
+            pathList.append(urlList.at(i).toLocalFile());
+            //pathList.append(urlList.at(i).toString());
+            QString str = (QString) pathList.at(i);
+            qDebug() << str;
+            std::cout<<"mimeData received: ["<<i<<"] "<<(std::string) str.toLatin1()<<std::endl;
+        }*/
+        
 		foreach ( const QUrl & url, mimeData->urls() )
 		{
 			QString str = url.toLocalFile();
 			if ( str.isEmpty() == false )
 			{
-				return str;
+                //std::cout<<"mimeData received: "<<str.constData();
+                return str;
 			}
 		}
 	}
@@ -235,16 +252,30 @@ void shape::dragEnterEvent( QDragEnterEvent * event )
 	{
 		event->acceptProposedAction();
 	}
+    /*if (event->mimeData()->hasUrls()) {
+        event->acceptProposedAction();
+    }*/
+    
 }
 void shape::dropEvent( QDropEvent * event )
 {
-	QString filename = mimeData_2_fileName( event->mimeData() );//qDebug() << filename;
+    
+    std::cout<<"Dropping files is disabled due to QT v 5.3.0 bug. This will be fixed when upgrading to lates QT"<<std::endl;
+    /*QString filename;
+    foreach (const QUrl &url, event->mimeData()->urls()) {
+        QString filename = url.toLocalFile();
+        qDebug() << "Dropped file:" << filename;
+    }*/
+    
+    
+	/*QString filename = mimeData_2_fileName( event->mimeData() );//qDebug() << filename;
 	if ( filename.isEmpty() == false )
 	{
 		std::string filestr = (const char*)filename.toLatin1(); // do it like this because microscoft stl and qt stl clash
 		std::cout<<"Opening: "<<filestr<<std::endl;
 		if(!(filestr.length()==0))	{this->import_shape_from_disc(filestr);	}
-	}
+	}*/
+    
 }
 void shape::import_shape_from_disc(std::string filestr)
 {			
@@ -282,7 +313,7 @@ void shape::on_actionSave_triggered()
 // Action to be taken upon Export
 void shape::on_actionExport_triggered()
 {
-    /*
+    
 		QString filename = QFileDialog::getSaveFileName(vtkWidget1, "",  "*.obj");
 	std::string filestr = (const char*)filename.toLatin1();
 	if(!(filestr.length()==0))
@@ -309,11 +340,12 @@ void shape::on_actionExport_triggered()
 		    _ren1->ResetCamera();
 			_ren1->GetRenderWindow()->Render();
 		}
-	}*/
+       
+	}
 }
 void shape::on_actionExport_to_STL_triggered()
 {
-    /*
+    
 		QString filename = QFileDialog::getSaveFileName(vtkWidget1, "",  "*.stl");
 	std::string filestr = (const char*)filename.toLatin1();
 	if(!(filestr.length()==0))
@@ -325,11 +357,11 @@ void shape::on_actionExport_to_STL_triggered()
 		w->SetFileName((filename.toStdString()).c_str());
 		w->Write();
 	}
-     */
+     /**/
 }
 void shape::on_actionExport_to_PLY_triggered()
 {
-    /*
+    
 	QString filename = QFileDialog::getSaveFileName(vtkWidget1, "",  "*.ply");
 	std::string filestr = (const char*)filename.toLatin1();
 	if(!(filestr.length()==0))
@@ -341,9 +373,35 @@ void shape::on_actionExport_to_PLY_triggered()
 		ply->SetFileName((filename.toStdString()).c_str());
 		ply->Write();
 	}
-     */
+     /**/
 }
-
+void shape::on_actionExport_to_VRML_triggered()
+{
+    
+    QString filename = QFileDialog::getSaveFileName(vtkWidget1, "",  "*.wrl");
+    std::string filestr = (const char*)filename.toLatin1();
+    if(!(filestr.length()==0))
+    {
+        // prepare the scene by removing the axis actor if present
+        if(_axis_on)
+        {
+            
+            _ren1->RemoveAllViewProps(); // remove the existing actors
+            _ren1->ResetCamera();
+            _ren1->GetRenderWindow()->Render();
+            _ren1->AddActor(Actor);		//  add the axis actor
+            _ren1->ResetCamera();
+            _ren1->GetRenderWindow()->Render();
+        }
+        
+        vtkVRMLExporter *vrml = vtkVRMLExporter::New();
+        vrml->  SetInput(_ren1->GetRenderWindow());
+        vrml->SetFileName((filename.toStdString()).c_str());
+        vrml->SetSpeed(5.5);
+        vrml->Write();
+        
+    }
+}
 
 
 void shape::shape2polydata(const shp_surface *s, vtkPolyData* polydata){
