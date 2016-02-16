@@ -2,7 +2,7 @@
 
 ![alt tag] (https://github.com/khaledkhairy/SHAPE/blob/master/clips/Screen%20Shot%202016-02-16%20at%2010.05.11%20AM.png)
 
-Generate spherical harmonics-based shapes, or explor existing ones, and their shape properties interactively and accurately.
+Generate spherical harmonics-based shapes, or explore existing ones, and their shape properties interactively and accurately.
 SHAPE allows monitoring behavior of (and modification of) spherrical harmonics parameterization (SPHARM) coefficients interactively.
 These are (Fourier) coefficients of a parametric spherical harmonics representation of objects of genus zero.
 Genus zero objects have no handles (the topology is that of the sphere).
