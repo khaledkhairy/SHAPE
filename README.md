@@ -7,9 +7,10 @@ SHAPE allows monitoring behavior of (and modification of) spherrical harmonics p
 These are (Fourier) coefficients of a parametric spherical harmonics representation of objects of genus zero.
 Genus zero objects have no handles (the topology is that of the sphere).
 SHAPE is also used to view spherical harmonics fields mapped onto a base SPHARM shape.
-Exporting shapes has temporarily been disabled.
+Shapes generated with SHAPE can be exported as triangular surface meshes into OBJ, PLY, STL and VRML formats.
+Test shapes are provided for initial experimentation.
 
-For examples of works based on shape parameterization using Fourier series expansions, please refer to:
+For examples of published works based on shape parameterization using Fourier series expansions, please refer to:
 
 -Minimum-energy vesicle and cell shapes calculated using spherical harmonics parameterization. 
 Khaled Khairy and Jonathon Howard. Soft Matter, 2011,7, 2138-2143
