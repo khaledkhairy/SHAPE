@@ -6,12 +6,11 @@ if(POLICY CMP0020)
   cmake_policy(SET CMP0020 NEW)
 endif()
 
-find_package(VTK COMPONENTS
+find_package(VTK REQUIRED
   vtkCommonCore
   vtkFiltersCore
   vtkInfovisCore
   vtkInteractionStyle
-  vtkRenderingFreeTypeOpenGL
   vtkViewsQt
 )
 include(${VTK_USE_FILE})
@@ -64,5 +63,5 @@ set(CMAKE_AUTOMOC ON)
   add_executable(shape MACOSX_BUNDLE
     ${Srcs} ${Hdrs} ${UI_Srcs} ${MOC_Hdrs} ${QRC_Srcs})
   qt5_use_modules(shape Core Gui Widgets)
-  target_link_libraries(shape ${VTK_LIBRARIES})
+  target_link_libraries(shape vtkIOPLY vtkIOGeometry vtkIOExport ${VTK_LIBRARIES})
 
