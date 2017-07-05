@@ -1,6 +1,6 @@
 # SHAPE (Spherical HArmonics Parameterization Explorer)
 
-![alt tag] (https://github.com/khaledkhairy/SHAPE/blob/master/clips/Screen%20Shot%202016-02-16%20at%2010.05.11%20AM.png)
+![Alt text](https://github.com/khaledkhairy/SHAPE/blob/master/clips/Screen%20Shot%202016-02-16%20at%2010.05.11%20AM.png "SHAPE screenshot")
 
 Generate spherical harmonics-based shapes, or explore existing ones, and their shape properties interactively and accurately.
 SHAPE allows monitoring behavior of (and modification of) spherrical harmonics parameterization (SPHARM) coefficients interactively.
