@@ -31,9 +31,9 @@ Khairy Khairy and Jonathon Howard. Med Image Anal. 2008 Apr;12(2):217-27. Epub 2
 Khaled Khairy, Jacques Pecreaux and Jonathon Howard. MICCAI 2007
 
 ----------------------------------------------------------------------------------
-For MacOSX, it is recommended to use the supplied binary in SHAPE_binary_MACOSX.zip
+For MacOSX Sierra, it is recommended to use the supplied binary in SHAPE_binary_MACOSX.zip
 ----------------------------------------------------------------------------------
-SHAPE was compiled using Qt 5.3.0 and VTK 6.10
+SHAPE was compiled using Qt 5.7and VTK 7.1.1 (although other versions might also work)
 
 Building notes:
 
@@ -41,9 +41,9 @@ SHAPE has been built using the following C/C++ libraries on both MacOSX and Wind
 
 [1] Eigen 3.1.1: http://eigen.tuxfamily.org
 
-[2] VTK 6.10: http://www.vtk.org/
+[2] VTK 7.1.1: http://www.vtk.org/
 
-[3] Qt 5.3.0: http://www.qt.io/
+[3] Qt 5.7: http://www.qt.io/
 
 [4] shape tools: https://github.com/khaledkhairy/shape_tools
 
