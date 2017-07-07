@@ -80,3 +80,5 @@ SHAPE has been built using the following C/C++ libraries on both MacOSX and Wind
 
 Building has not been tested extensively on any other configuration.
 
+## Acknowledgements:
+To Jonathon Howard for supporting development of the first version of SHAPE.
