@@ -28,11 +28,13 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-------------------------------------------------------------------------------
+
 
 ## Status: 
+------------------------------------------------------------------------------
 In production use at Janelia. This is a nascent set of tools that is undergoing large changes and code cleanup. We consider the library suitable for use by our collaborators as well as other research groups. Due to limited staffing, we do not guarantee support for outside groups.
 ## Summary: 
+------------------------------------------------------------------------------
 Generate spherical harmonics-based shapes, or explore existing ones, and their shape properties interactively and accurately.
 SHAPE allows monitoring behavior of (and modification of) spherical harmonics parameterization (SPHARM) coefficients interactively.
 These are (Fourier) coefficients of a parametric spherical harmonics representation of objects of genus zero.
@@ -61,12 +63,10 @@ Khairy Khairy and Jonathon Howard. Med Image Anal. 2008 Apr;12(2):217-27. Epub 2
 -Spherical Harmonics 3D Active Contours for Membrane Bilayer-Bound Surfaces. 
 Khaled Khairy, Jacques Pecreaux and Jonathon Howard. MICCAI 2007
 
-----------------------------------------------------------------------------------
-For MacOSX Sierra, it is recommended to use the supplied binary in SHAPE_binary_MACOSX.zip
-----------------------------------------------------------------------------------
-SHAPE was compiled using Qt 5.7and VTK 7.1.1 (although other versions might also work)
+
 
 Building notes:
+------------------------------------------------------------------------------
 
 SHAPE has been built using the following C/C++ libraries on both MacOSX and Windows 7:
 
@@ -79,6 +79,10 @@ SHAPE has been built using the following C/C++ libraries on both MacOSX and Wind
 [4] shape tools: https://github.com/khaledkhairy/shape_tools
 
 Building has not been tested extensively on any other configuration.
+For MacOSX Sierra, it is recommended to use the supplied binary.
+
+SHAPE was compiled using Qt 5.7and VTK 7.1.1 (although other versions might also work)
 
 ## Acknowledgements:
+------------------------------------------------------------------------------
 To Jonathon Howard for supporting development of the first version of SHAPE.
