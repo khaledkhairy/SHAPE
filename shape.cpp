@@ -221,10 +221,10 @@ QString shape::mimeData_2_fileName( const QMimeData * mimeData )
 
     if ( mimeData->hasUrls() )
 	{
-        /*
+        /**/
          QStringList pathList;
         QList<QUrl> urlList = mimeData->urls();
-        // extract the local paths of the files
+        // extract local paths of the files
         for (int i = 0; i < urlList.size() && i < 32; ++i)
         {
             pathList.append(urlList.at(i).toLocalFile());
@@ -232,7 +232,7 @@ QString shape::mimeData_2_fileName( const QMimeData * mimeData )
             QString str = (QString) pathList.at(i);
             qDebug() << str;
             std::cout<<"mimeData received: ["<<i<<"] "<<(std::string) str.toLatin1()<<std::endl;
-        }*/
+        }
         
 		foreach ( const QUrl & url, mimeData->urls() )
 		{
@@ -261,20 +261,21 @@ void shape::dropEvent( QDropEvent * event )
 {
     
     std::cout<<"Dropping files is disabled due to QT v 5.3.0 bug. This will be fixed when upgrading to lates QT"<<std::endl;
-    /*QString filename;
+    /*
+    QString filename;
     foreach (const QUrl &url, event->mimeData()->urls()) {
         QString filename = url.toLocalFile();
         qDebug() << "Dropped file:" << filename;
     }*/
     
     
-	/*QString filename = mimeData_2_fileName( event->mimeData() );//qDebug() << filename;
+	QString filename = mimeData_2_fileName( event->mimeData() );//qDebug() << filename;
 	if ( filename.isEmpty() == false )
 	{
 		std::string filestr = (const char*)filename.toLatin1(); // do it like this because microscoft stl and qt stl clash
 		std::cout<<"Opening: "<<filestr<<std::endl;
 		if(!(filestr.length()==0))	{this->import_shape_from_disc(filestr);	}
-	}*/
+	}
     
 }
 void shape::import_shape_from_disc(std::string filestr)
