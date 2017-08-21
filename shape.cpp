@@ -260,8 +260,8 @@ void shape::dragEnterEvent( QDragEnterEvent * event )
 void shape::dropEvent( QDropEvent * event )
 {
     
-    std::cout<<"Dropping files is disabled due to QT v 5.3.0 bug. This will be fixed when upgrading to lates QT"<<std::endl;
-    /*
+    /*std::cout<<"Dropping files is disabled due to QT v 5.3.0 bug. This will be fixed when upgrading to lates QT"<<std::endl;
+    
     QString filename;
     foreach (const QUrl &url, event->mimeData()->urls()) {
         QString filename = url.toLocalFile();
