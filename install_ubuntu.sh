@@ -12,8 +12,8 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
 echo "==> Installing system packages (sudo may prompt)..."
-sudo apt-get update
-sudo apt-get install -y \
+apt-get update
+apt-get install -y \
   python3 python3-venv python3-dev python3-pip \
   build-essential git \
   libgl1 libglib2.0-0 libxkbcommon-x11-0 libxcb-xinerama0 \
