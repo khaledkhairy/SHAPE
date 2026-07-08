@@ -1,0 +1,10 @@
+# Runtime + build dependencies for the SHAPE viewer (Windows/Linux port).
+# Install into an isolated virtual environment:
+#   python -m venv .venv
+#   .venv\Scripts\pip install -r requirements.txt   (Windows)
+#   .venv/bin/pip install -r requirements.txt        (Linux)
+numpy
+vtk
+PyQt5
+pybind11
+pyinstaller

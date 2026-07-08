@@ -86,3 +86,48 @@ SHAPE was compiled using Qt 5.7and VTK 7.1.1 (although other versions might also
 ## Acknowledgements:
 ------------------------------------------------------------------------------
 To Jonathon Howard for supporting development of the first version of SHAPE.
+
+---
+
+## Windows / Linux port (2026)
+
+The original macOS C++ application (`main.cpp`, `shape.cpp`, `SHAPE_binary_MACOSX/`, etc.) is **unchanged**. A cross-platform port reuses the same `shape_tools` math core and the same GUI layout, hosted through PyQt5 + VTK:
+
+| Component | Location |
+|---|---|
+| Original macOS app | repo root (`main.cpp`, `shape.cpp`, `CMakeLists.txt`, `SHAPE_binary_MACOSX/`) |
+| Cross-platform core | `core/` (vendored `shape_tools`; only Eigen include path repointed) |
+| Cross-platform GUI | `app/shape.ui`, `app/shape_app.py` |
+| pybind11 wrapper | `bindings/shp_core.cpp`, `setup.py` |
+
+### Ubuntu (easy install)
+
+```bash
+git clone https://github.com/khaledkhairy/SHAPE.git
+cd SHAPE
+chmod +x install_ubuntu.sh
+./install_ubuntu.sh
+```
+
+Then launch from the Applications menu (**SHAPE**) or run:
+
+```bash
+shape
+```
+
+### Windows (double-clickable app)
+
+```powershell
+.\build.ps1
+# launches: dist\SHAPE\SHAPE.exe
+```
+
+Or run from source: `.\run_from_source.ps1`
+
+### Linux rebuild / run from source
+
+```bash
+./build_linux.sh
+```
+
+Eigen headers are downloaded automatically by `scripts/fetch_eigen.sh` (not stored in git).

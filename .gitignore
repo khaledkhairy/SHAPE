@@ -1,0 +1,14 @@
+.venv/
+build/
+build_pyi/
+dist/
+__pycache__/
+*.pyd
+*.so
+*.obj
+*.exp
+*.lib
+scripts/out/
+*.egg-info/
+_upstream_check/
+third_party/eigen/
